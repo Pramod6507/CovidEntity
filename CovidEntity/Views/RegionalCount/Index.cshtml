@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CovidEntity.Models.RegionalCount>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CovidCount.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionConfirmed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionInpatientHospitalization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionIcuHospitalization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionRecovered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionDeath)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CovidCount.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionConfirmed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionInpatientHospitalization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionIcuHospitalization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionRecovered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegionDeath)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

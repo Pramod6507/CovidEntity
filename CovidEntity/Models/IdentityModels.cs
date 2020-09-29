@@ -20,9 +20,26 @@ namespace CovidEntity.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<CovidCount> CovidCount { get; set; }
+        public DbSet<AgeGroupCount> AgeGroupCount { get; set; }
+        public DbSet<RegionalCount> RegionalCount { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CovidCount>()
+                .HasMany(c => c.AgeGroupCount)
+                .WithRequired(a => a.CovidCount)
+                .HasForeignKey(a => a.CovidCountId);
+
+            modelBuilder.Entity<CovidCount>()
+                .HasMany(c => c.RegionalCount)
+                .WithRequired(r => r.CovidCount)
+                .HasForeignKey(r => r.CovidCountId);
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public static ApplicationDbContext Create()

@@ -1,0 +1,50 @@
+﻿@model CovidEntity.Models.AgeGroupCount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AgeGroupCount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CovidCount.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CovidCount.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeCount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

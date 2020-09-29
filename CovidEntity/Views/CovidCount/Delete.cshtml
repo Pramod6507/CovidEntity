@@ -1,0 +1,64 @@
+﻿@model CovidEntity.Models.CovidCount
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CovidCount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCases)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCases)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recovered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recovered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deaths)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deaths)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

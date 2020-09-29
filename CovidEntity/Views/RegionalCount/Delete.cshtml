@@ -1,0 +1,88 @@
+﻿@model CovidEntity.Models.RegionalCount
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RegionalCount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CovidCount.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CovidCount.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionInpatientHospitalization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionInpatientHospitalization)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionIcuHospitalization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionIcuHospitalization)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionRecovered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionRecovered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionDeath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionDeath)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
